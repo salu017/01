@@ -12,20 +12,20 @@ jobs:
     - name: Download 
       run: |
         
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/start.bat -OutFile start.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/winrar.exe -OutFile winrar.exe
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/b1.bat -OutFile b1.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/b2.bat -OutFile b2.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/start.txt -OutFile start.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/winrar.txt -OutFile winrar.exe
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/b.txt -OutFile b1.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/bb.txt -OutFile b2.bat
         Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/RTX.zip -OutFile RTX.zip 
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/ex1.ps1 -OutFile ex1.ps1
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/ex2.bat -OutFile ex2.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/onAi.bat -OutFile onAi.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QRES.bat -OutFile QRES.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QRes.exe -OutFile QRes.exe
-        
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/ex.txt -OutFile ex1.ps1
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/exx.txt -OutFile ex2.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/onAi.txt -OutFile onAi.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QRES.txt -OutFile QRES.bat
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QResexe.txt -OutFile QRes.exe
+         
     - name: COPY TO DESKTOP
       run: |
-        copy winrar.exe C:\Users\Public\Desktop\winrar.exe
+        
         copy b2.bat C:\Users\Public\Desktop\b2.bat
         copy b1.bat C:\Users\Public\Desktop\b1.bat
         copy RTX.zip C:\Users\Public\Desktop\RTX.zip
