@@ -12,36 +12,22 @@ jobs:
     - name: Download 
       run: |
         
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/start.txt -OutFile start.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/winrar.txt -OutFile winrar.exe
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/b.txt -OutFile b1.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/bb.txt -OutFile b2.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/RTX.zip -OutFile RTX.zip 
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/ex.txt -OutFile ex1.ps1
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/exx.txt -OutFile ex2.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/onAi.txt -OutFile onAi.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QRES.txt -OutFile QRES.bat
-        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/QResexe.txt -OutFile QRes.exe
-         
-    - name: COPY TO DESKTOP
+        Invoke-WebRequest https://github.com/bhupi0724/data/releases/download/rdp/data.zip -OutFile data.zip 
+           
+        
+    - name: ZIP UNLOCK
       run: |
         
-        copy b2.bat C:\Users\Public\Desktop\b2.bat
-        copy b1.bat C:\Users\Public\Desktop\b1.bat
-        copy RTX.zip C:\Users\Public\Desktop\RTX.zip
-        copy ex1.ps1 C:\Users\Public\Desktop\ex1.ps1
-        copy ex2.bat C:\Users\Public\Desktop\ex2.bat
-        copy QRES.bat C:\Users\Public\Desktop\QRES.bat
-        copy QRes.exe C:\Users\Public\Desktop\QRes.exe
+        copy data.zip C:\Users\Public\Desktop\data.zip 
+        Expand-Archive -Path "C:\Users\Public\Desktop\data.zip" -DestinationPath "C:\Users"  
+        copy C:\Users\data\RTX.zip C:\Users\Public\Desktop\RTX.zip
+        Expand-Archive -Path "C:\Users\Public\Desktop\RTX.zip" -DestinationPath "C:\Users"                
         
     - name: SET TIME
-      run: cmd /c C:\Users\Public\Desktop\b1.bat
+      run: cmd /c C:\Users\data\b1.bat
       
-    - name: SET SCREEN
-      run: cmd /c QRES.bat
-      
-    - name: UNLOCK ZIP
-      run: cmd /c C:\Users\Public\Desktop\ex2.bat
-                 
+    - name: SET SCREEN BAT
+      run: cmd /c C:\Users\data\SCREEN.bat
+        
     - name: RUN AI
-      run: cmd /c onAi.bat 
+      run: cmd /c C:\Users\data\onAi.bat  
